@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition of Bill Doc Head'
+define service ZSRV_DEF_BILL_H {
+  expose ZCDS_C_BILL_H as BillingDocumentHeader;
+}

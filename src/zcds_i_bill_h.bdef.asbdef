@@ -1,0 +1,25 @@
+managed implementation in class zbp_cds_i_bill_h unique;
+strict ( 2 );
+
+define behavior for zcds_i_bill_h //alias <alias_name>
+persistent table ztab_billing_h
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+    field ( readonly:update, mandatory : create ) BillId;
+    mapping for ztab_billing_h
+    {
+      BillId     = bill_id;
+      BillType   = bill_type;
+      BillDate   = bill_date;
+      CustomerId = customer_id;
+      NetAmount  = net_amount;
+      Currency   = currency;
+      SalesOrg   = sales_org;
+    }
+
+}
